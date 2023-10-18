@@ -168,13 +168,13 @@ header li:hover{
   display: flex;
   justify-content:space-between;
   height:30rem;
-  background-color: #00ADB5;
+ 
   margin-top: 3rem;
   width: 85%;
 }
 
 .block1__arrow{
-  background-color: chocolate;
+  
   height: 30rem;
   display: flex;
   align-items: center;
@@ -184,24 +184,65 @@ header li:hover{
 .block1__carrouselContainer{
   width: 170rem;
   height: 30rem;
-  background-color: rgb(128, 95, 47);
+  
   overflow: hidden;
 }
 
 .block1__carrousel{
   width: 100%;
   height: 100%;
-  background-color: brown;
+  
   display: flex;
-  gap: 1rem;
+  
   
 
 }
 
 .block1__card{
-  height: 100%;
-  width: 25%;
-  background-color: #00ADB5;
+    min-width: 16rem;
+    padding: 0 0.5rem ;
+    height: 100%;
+    flex: 0 0 calc(100% / 4);
+    display: flex;
+    justify-content: center;
+
+}
+
+ .block1__card--info{
+   
+    background-color: #191923;
+    border-radius: 5px;
+    width: 95%;
+    border-radius: 15px;
+    
+    
+ }
+ .block1__card--info img{
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+}
+
+.block1__text{
+    text-align: center;
+    margin-top: 1rem;
+
+}
+
+.block1__text h2 {
+    color: #00ADB5;
+    font-size: 2.5rem;
+}
+.block1__text h3{
+    font-size: 2rem;
+    color: #00ADB5;
+}
+
+.block1__text p {
+    font-size: 1.1rem;
+    color: #eee
+
 }
 
 
@@ -218,43 +259,43 @@ header li:hover{
 
 
 
+@media(width <1350px){
+    .block1__card{
+        flex: 0 0 calc(100% / 3);
+        
+    }
+    
+}
 
+@media(width < 1050px){
+    .block1__carrouselContainer, .block1__arrow,  .block1__container {
+        height: 25rem; 
+    }
+    .block1__card{
+        min-width: 13rem;
+    }
+    .block1__text{
+        margin-top: 0;
+    }
+    .block1__text h2{
+        font-size: 2rem;
+    }
+    .block1__text h3{
+        font-size: 1.7rem;
+    }
 
+    .block1__text p{
+        font-size: 1rem;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 @media(width < 950px){
 
     header{
         flex-wrap: wrap;
         height: 5rem;
+        
     }
 
     .box{
@@ -288,11 +329,13 @@ header li:hover{
         
     }
     header nav, header ul, header li{
-       width:  100%
+       width:  100%;
+      
     }
     header ul{
         flex-direction: column;
         gap: 0;
+        
        
         
         
@@ -303,12 +346,33 @@ header li:hover{
         text-align: center;
         justify-content: center;
         align-items: center;
-        
+        display:none
     }
    
     .box2 button{
         width: 100%;
         height: 5rem;
+        display:none
     }
-  }
+  
+    .block1__container{
+        width: 95%;
+    }
 
+    .block1__card{
+        flex: 0 0 calc(100% / 2);
+    }
+
+
+
+
+
+}
+
+@media( width < 570px){
+
+    .block1__card{
+        flex: 0 0 calc(100% / 1);
+    }
+
+}
