@@ -1,13 +1,14 @@
+
+const carrousel = document.querySelector(".block2__carrousel")
+const cards = document.querySelectorAll(".block2__card")
 const arrowCarrouselLeft = document.querySelector("#leftArrow")
 const arrowCarrouselRight = document.querySelector("#rightArrow")
-const carrousel = document.querySelector(".block1__carrousel")
-const cards = document.querySelectorAll(".block1__card")
 
 let initial = 0;
 
 arrowCarrouselRight.addEventListener("click", () => {
      // Recalcula el ancho de la tarjeta
-    if(initial < cards.length -2){
+    if(initial < cards.length){
         initial++;
         carrousel.style.transform = `translateX(-${initial *20}rem)`;
     }
