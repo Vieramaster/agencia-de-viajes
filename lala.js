@@ -6,17 +6,17 @@ const cards = document.querySelectorAll(".block1__card")
 let initial = 0;
 
 arrowCarrouselRight.addEventListener("click", () => {
-    let cardWidth = cards[0].offsetWidth; // Recalcula el ancho de la tarjeta
-    if(initial < cards.length - 4){
+     // Recalcula el ancho de la tarjeta
+    if(initial < cards.length -2){
         initial++;
-        carrousel.style.transform = `translateX(-${initial * cardWidth}px)`;
+        carrousel.style.transform = `translateX(-${initial *20}rem)`;
     }
 });
 
 arrowCarrouselLeft.addEventListener("click", ()=>{
-    let cardWidth = cards[0].offsetWidth; // Recalcula el ancho de la tarjeta
+    
     if(initial > 0){
         initial--;
-        carrousel.style.transform = `translateX(-${initial * cardWidth}px)`;
+        carrousel.style.transform = `translateX(-${initial * 20}rem)`;
     }
 });
