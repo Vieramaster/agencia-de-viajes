@@ -42,7 +42,7 @@ header li {
   border-radius: 5px;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #eee;
+  color: #fff;
   height: 3rem;
   padding: 1rem;
   border: none;
@@ -53,7 +53,7 @@ header li {
 }
 
 .box2 button:hover {
-  background-color: #eee;
+  background-color: #fff;
   color: #00adb5;
 }
 header li {
@@ -116,7 +116,7 @@ header li:hover {
 }
 
 .block1__contact {
-  background-color: #eee;
+  background-color: #fff;
   display: flex;
   height: 2.5rem;
   width: 100%;
@@ -247,7 +247,7 @@ header li:hover {
   justify-content:space-around;
   height: 6rem;
   width: 100%;
-  background-color: #fff;
+  background-color: #eee;
   
   
 }
@@ -376,8 +376,15 @@ header li:hover {
         display: none;
     }
 
+    .block2__banner{
+      min-width: 780px;
+      height: 4rem;
+    }
+    .block2__banner--box svg{
+      height: 2rem;
+    }
 }
-@media (width < 770px){
+@media (width < 780px){
     .block2__boxCarrousel{
         width: 23.5rem;
         
@@ -394,11 +401,17 @@ header li:hover {
 
 @media (width < 480px){
 
+    .box{
+      gap: 1rem;
+    }
     .box__logo :first-child{
         display: none;
     }
     .box__logo :last-child{
         display: block;
+        height: 30%;
+        display: flex;
+        place-content: center;
     }
     .block2__arrows{
         width: 1.5rem;
