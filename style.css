@@ -175,6 +175,7 @@ background-color: #eee;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    
 }
 
 
@@ -189,6 +190,7 @@ background-color: #eee;
     height: 100%;
     transition: 0.3s all ease;
     display: flex;
+   
     
 }
 
@@ -280,7 +282,7 @@ background-color: #eee;
 .block2__text h2{
   text-align: center;
   text-decoration: underline 4px #00adb5;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 .block3{
   background-color: blueviolet;
@@ -331,7 +333,7 @@ background-color: #eee;
         margin: auto;
         margin-top: 2rem;
         z-index: -1;
-        transform:translateY(-150%);
+        
        transition: 0.5s all ease; 
       }
       
@@ -452,6 +454,8 @@ background-color: #eee;
         margin: 0
       }
       
-      
+      .box__responsive svg{
+        height: 2rem;
+      }
     
 }
