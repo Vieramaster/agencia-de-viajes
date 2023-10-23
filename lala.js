@@ -27,61 +27,49 @@ window.addEventListener("resize", () => {
   }
 });
 
-
 /* CARDS*/
 
-const nationalCarrousel = document.querySelector("#national")
+const nationalCarrousel = document.querySelector("#national");
 
-
-async function  dataJson(){
-    return fetch('/data.json')
-        .then(response => response.json())
-        .catch(console.error);
+async function dataJson() {
+  return fetch("/data.json")
+    .then((response) => response.json())
+    .catch(console.error);
 }
 
+window.addEventListener("DOMContentLoaded", InjectDOMCards);
 
-window.addEventListener("DOMContentLoaded", InjectDOMCards)
-
-
-function InjectDOMCards(){
-  
-  dataJson().then(data => {
-    let nationalData = data.filter((item) => item.place ==="nacional");
-    let internationalData = data.filter((item)=> item.place === "internacional")
+function InjectDOMCards() {
+  dataJson()
+    .then((data) => {
+      let nationalData = data.filter((item) => item.place === "nacional");
+      let internationalData = data.filter(
+        (item) => item.place === "internacional"
+      );
 
       let randomIndices = getRandomNumberCards(10);
-      let selectedNationData = randomIndices.map(i => nationalData[i]);
+      let selectedNationData = randomIndices.map((i) => nationalData[i]);
 
-      nationalCarrousel.innerHTML = dataCardsEstructure(selectedNationData)
-      CarrouselCards()
-  }).catch(error => console.error('Error:', error));
-
+      nationalCarrousel.innerHTML = dataCardsEstructure(selectedNationData);
+      CarrouselCards();
+    })
+    .catch((error) => console.error("Error:", error));
 }
-
-
-
-
-
 
 function getRandomNumberCards(max) {
   let arrayNumbers = [];
-  while(arrayNumbers.length < max){
+  while (arrayNumbers.length < max) {
     let randomNumber = Math.floor(Math.random() * max);
-    if(arrayNumbers.indexOf(randomNumber) === -1) {
+    if (arrayNumbers.indexOf(randomNumber) === -1) {
       arrayNumbers.push(randomNumber);
     }
   }
   return arrayNumbers;
 }
 
-
-
-
-function dataCardsEstructure(info){
-
-    let DisplayCard = info.map((item)=>{
-
-        return `<div class="block2__card">
+function dataCardsEstructure(info) {
+  let DisplayCard = info.map((item) => {
+    return `<div class="block2__card">
                     <div class="block2__card--img">
                         <img src="${item.image}" alt="${item.city}">
                     </div>
@@ -92,36 +80,73 @@ function dataCardsEstructure(info){
                         <p>tarifa por persona</p>
                         <p>+tazas e impuestos</p>
                     </div>
-                </div>`
-    })
-    DisplayCard = DisplayCard.join("")
-    return DisplayCard
- 
+                </div>`;
+  });
+  DisplayCard = DisplayCard.join("");
+  return DisplayCard;
 }
 
 /* CARROUSEL */
-function CarrouselCards(){
-        const carrousel = document.querySelector(".block2__carrousel");
-        const cards = document.querySelectorAll(".block2__card");
-        const arrowCarrouselLeft = document.querySelector("#leftArrow");
-        const arrowCarrouselRight = document.querySelector("#rightArrow");
+function CarrouselCards() {
+  const carrousel = document.querySelector(".block2__carrousel");
+  const arrowCarrouselLeft = document.querySelector("#leftArrow");
+  const arrowCarrouselRight = document.querySelector("#rightArrow");
+  let timer
 
-        let initial = 0;
-        
-        arrowCarrouselRight.addEventListener("click", () => {
-        
-          if (initial < cards.length -1 ) {
-            initial++;
-            carrousel.style.transform = `translateX(-${initial * 20}rem)`;
-          }
-        });
+  function resetTimer(){
+    if(timer){
+      clearTimeout(timer)
+    }
+    timer = setTimeout(nextCarrousel, 5000);
+  }
 
-        arrowCarrouselLeft.addEventListener("click", () => {
-          if (initial > 0) {
-            initial--;
-            carrousel.style.transform = `translateX(-${initial * 20}rem)`;
-          }
-        });
+  function disableButtons() {
+    arrowCarrouselLeft.disabled = true;
+    arrowCarrouselRight.disabled = true;
+  }
 
+  function enableButtons() {
+    arrowCarrouselLeft.disabled = false;
+    arrowCarrouselRight.disabled = false;
+  }
 
+  function nextCarrousel(){
+    disableButtons();
+    let cardFirst = document.querySelectorAll(".block2__card")[0];
+    carrousel.style.marginLeft = "-20rem";
+    carrousel.style.transition = "0.3s all ease";
+  
+    setTimeout(() => {
+      carrousel.style.transition = "none";
+      carrousel.insertAdjacentElement("beforeend", cardFirst);
+      carrousel.style.marginLeft = "0";
+      enableButtons();
+      resetTimer()
+    }, 300);
+  }
+
+  function prevCarrousel(){
+    disableButtons();
+      let cards = document.querySelectorAll(".block2__card");
+      let cardLast = cards[cards.length - 1];
+      carrousel.style.marginLeft = "20rem";
+      carrousel.style.transition = "0.3s all ease";
+  
+      setTimeout(() => {
+        carrousel.style.transition = "none";
+        carrousel.insertAdjacentElement("afterbegin", cardLast);
+        carrousel.style.marginLeft = "0";
+        enableButtons();
+        resetTimer()
+      }, 300);
+  }
+  arrowCarrouselRight.addEventListener("click", nextCarrousel)
+
+  arrowCarrouselLeft.addEventListener("click", prevCarrousel)
+
+  resetTimer();
+  
 }
+
+
+
