@@ -37,9 +37,9 @@ async function dataJson() {
     .catch(console.error);
 }
 
-window.addEventListener("DOMContentLoaded", InjectDOMCards);
+window.addEventListener("DOMContentLoaded", InjectDOM);
 
-function InjectDOMCards() {
+function InjectDOM() {
   dataJson()
     .then((data) => {
       let nationalData = data.filter((item) => item.place === "nacional");
@@ -52,10 +52,13 @@ function InjectDOMCards() {
 
       nationalCarrousel.innerHTML = dataCardsEstructure(selectedNationData);
       CarrouselCards();
+
+      searchBar(nationalData, internationalData)
     })
     .catch((error) => console.error("Error:", error));
 }
 
+/* CARROUSEL */
 function getRandomNumberCards(max) {
   let arrayNumbers = [];
   while (arrayNumbers.length < max) {
@@ -86,16 +89,15 @@ function dataCardsEstructure(info) {
   return DisplayCard;
 }
 
-/* CARROUSEL */
 function CarrouselCards() {
   const carrousel = document.querySelector(".block2__carrousel");
   const arrowCarrouselLeft = document.querySelector("#leftArrow");
   const arrowCarrouselRight = document.querySelector("#rightArrow");
-  let timer
+  let timer;
 
-  function resetTimer(){
-    if(timer){
-      clearTimeout(timer)
+  function resetTimer() {
+    if (timer) {
+      clearTimeout(timer);
     }
     timer = setTimeout(nextCarrousel, 5000);
   }
@@ -110,43 +112,74 @@ function CarrouselCards() {
     arrowCarrouselRight.disabled = false;
   }
 
-  function nextCarrousel(){
+  function nextCarrousel() {
     disableButtons();
     let cardFirst = document.querySelectorAll(".block2__card")[0];
     carrousel.style.marginLeft = "-20rem";
     carrousel.style.transition = "0.3s all ease";
-  
+
     setTimeout(() => {
       carrousel.style.transition = "none";
       carrousel.insertAdjacentElement("beforeend", cardFirst);
       carrousel.style.marginLeft = "0";
       enableButtons();
-      resetTimer()
+      resetTimer();
     }, 300);
   }
 
-  function prevCarrousel(){
+  function prevCarrousel() {
     disableButtons();
-      let cards = document.querySelectorAll(".block2__card");
-      let cardLast = cards[cards.length - 1];
-      carrousel.style.marginLeft = "20rem";
-      carrousel.style.transition = "0.3s all ease";
-  
-      setTimeout(() => {
-        carrousel.style.transition = "none";
-        carrousel.insertAdjacentElement("afterbegin", cardLast);
-        carrousel.style.marginLeft = "0";
-        enableButtons();
-        resetTimer()
-      }, 300);
-  }
-  arrowCarrouselRight.addEventListener("click", nextCarrousel)
+    let cards = document.querySelectorAll(".block2__card");
+    let cardLast = cards[cards.length - 1];
+    carrousel.style.marginLeft = "20rem";
+    carrousel.style.transition = "0.3s all ease";
 
-  arrowCarrouselLeft.addEventListener("click", prevCarrousel)
+    setTimeout(() => {
+      carrousel.style.transition = "none";
+      carrousel.insertAdjacentElement("afterbegin", cardLast);
+      carrousel.style.marginLeft = "0";
+      enableButtons();
+      resetTimer();
+    }, 300);
+  }
+  arrowCarrouselRight.addEventListener("click", nextCarrousel);
+
+  arrowCarrouselLeft.addEventListener("click", prevCarrousel);
 
   resetTimer();
+}
+
+/* BARRA DE BUSQUEDA*/
+
+const boxBar = document.querySelector("#form-search");
+const locationList = document.querySelector("#select-location");
+const placeList = document.querySelector("#select-place");
+const yearList = document.querySelector("#select-year");
+const monthList = document.querySelector("#select-month");
+
+
+const allSelectSearch = document.querySelectorAll("#form-search select")
+
+function searchBar(nationalData, internationalData) {
   
+  allSelectSearch.forEach((singleSelect) =>{
+    singleSelect.addEventListener("change", (event)=>{
+      let selectedValue = event.target.value;
+
+      if (selectedValue === "national") {
+        locationList.innerHTML = EstructureOptionSearch(nationalData, "city");
+      } else locationList.innerHTML = EstructureOptionSearch(internationalData, "city");
+    })
+
+  })
 }
 
 
 
+function EstructureOptionSearch(array, infoArray) {
+  let displayOption = array.map((item) => {
+    return ` <option value="${item[infoArray]}">${item[infoArray]}</option>`;
+  });
+  displayOption = displayOption.join("");
+  return displayOption;
+}
