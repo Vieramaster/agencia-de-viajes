@@ -157,27 +157,19 @@ const placeList = document.querySelector("#select-place");
 const yearList = document.querySelector("#select-year");
 const monthList = document.querySelector("#select-month");
 
-
-const allSelectSearch = document.querySelectorAll("#form-search select")
-
 function searchBar(nationalData, internationalData) {
   
-  allSelectSearch.forEach((singleSelect) =>{
-    singleSelect.addEventListener("change", (event)=>{
-      let selectedValue = event.target.value;
+  placeList.addEventListener("change", (event)=>{
+    let selectedValue = event.target.value;
 
-      if (selectedValue === "national") {
-        locationList.innerHTML = EstructureOptionSearch(nationalData, "city");
-        
-       
+    if (selectedValue === "national") {
+      locationList.innerHTML = EstructureOptionSearch(nationalData, "city");
 
-      } else locationList.innerHTML = EstructureOptionSearch(internationalData, "city");
-    })
-
-  })
+    } else {
+      locationList.innerHTML = EstructureOptionSearch(internationalData, "city");
+    }
+  });
 }
-
-
 
 function EstructureOptionSearch(array, infoArray) {
   let displayOption = array.map((item) => {
@@ -188,3 +180,11 @@ function EstructureOptionSearch(array, infoArray) {
   return displayOption;
 }
 
+function valueList(list){
+
+  list.addEventListener("change", (event)=>{
+    
+    let valueEvent = event.target.value
+    return valueEvent
+  })
+}
