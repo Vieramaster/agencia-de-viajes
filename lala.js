@@ -188,39 +188,3 @@ function EstructureOptionSearch(array, infoArray) {
   return displayOption;
 }
 
-/*function searchBar(nationalData, internationalData) {
-  
-  let placeOptions  = placeList.querySelectorAll("option")
-
-  
-
-  let fore = EstructureOptionSearchObjets(placeOptions)
-    
-  console.log(fore)
-
-  if(fore == "nacional"){
-    console.log("gato")
-  }
-}
-
-
-
-function EstructureOptionSearch(array, infoArray) {
-  let displayOption = array.map((item) => {
-    return ` <option value="${item[infoArray]}">${item[infoArray]}</option>`;
-  });
-
-  displayOption = displayOption.join("");
-  return displayOption;
-}
-
-function EstructureOptionSearchObjets(searchOptions){
-  
-  searchOptions.forEach((singleOption)=>{
-    singleOption.addEventListener("change",(event)=>{
-    let eventValue = event.target.value;
-    console.log(eventValue)
-    });
-  });
-  
-}
