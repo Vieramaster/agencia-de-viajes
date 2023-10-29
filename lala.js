@@ -29,13 +29,14 @@ window.addEventListener("resize", () => {
 
 /* CARDS*/
 
-const nationalCarrousel = document.querySelector("#national");
-
-async function dataJson() {
+function dataJson() {
   return fetch("/data.json")
     .then((response) => response.json())
     .catch(console.error);
 }
+const nationalCarrousel = document.querySelector("#national");
+
+
 
 window.addEventListener("DOMContentLoaded", InjectDOM);
 
@@ -159,17 +160,20 @@ const monthList = document.querySelector("#select-month");
 
 function searchBar(nationalData, internationalData) {
   
-  placeList.addEventListener("change", (event)=>{
-    let selectedValue = event.target.value;
-
-    if (selectedValue === "national") {
-      locationList.innerHTML = EstructureOptionSearch(nationalData, "city");
-
-    } else {
-      locationList.innerHTML = EstructureOptionSearch(internationalData, "city");
-    }
+  valueList(placeList, (selectedValue) => {
+      if (selectedValue === "national") {
+          locationList.innerHTML = EstructureOptionSearch(nationalData, "city");
+          valueList(locationList, (selectedValue) => {
+              
+              
+          });
+      } else {
+          locationList.innerHTML = EstructureOptionSearch(internationalData, "city");
+      }
   });
 }
+
+
 
 function EstructureOptionSearch(array, infoArray) {
   let displayOption = array.map((item) => {
@@ -180,11 +184,28 @@ function EstructureOptionSearch(array, infoArray) {
   return displayOption;
 }
 
-function valueList(list){
-
+function valueList(list, callback){
   list.addEventListener("change", (event)=>{
-    
-    let valueEvent = event.target.value
-    return valueEvent
+    let valueEvent = event.target.value;
+    callback(valueEvent);
   })
 }
+
+
+async function searchCityData(info){
+
+  let i
+  let array = await dataJson()
+  let result = []
+  
+    for( i = 0; i < array.length; i++){
+  
+      if (array[i] === info){
+        result.push(array[i])
+      }
+    }
+    console.log(result)
+  }
+  
+  searchCityData("Bariloche")
+  
