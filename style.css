@@ -184,32 +184,42 @@ header {
 
 .block2{
   width: 100%;
-  height: 40rem;
+  height: 35rem;
   background-color: var(--primary-color);
   display: flex;
 }
 
-.block2__text, .block2__img{
+.block2__text {
   flex: 50%;
 
 }
+.block2__img{
+  flex: 50%;
+}
 .block2__text{
-  
-  padding: 5rem;
+  height: auto;
+  padding-left: 5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   justify-content: center;
   
-  
+
 }
 .block2__text h2{
   font-size: 3rem;
   font-weight: 600;
   color: var(--secondary-color);
   border-bottom: var(--fifth-color) 4px solid;
-  width: 25rem;
+  width: auto;
   line-height: 1;
+  
+}
+
+.block2__text h2::after{
+  content: "";
+  left: 0;
+  top: 0;
   
 }
 
@@ -228,7 +238,7 @@ header {
 
 
 .block2__img img{
-  width: 80%;
+  width: 38rem;
   filter: drop-shadow(4px 4px 13px #000000);
 
   
@@ -276,6 +286,14 @@ header {
     padding: 0 1.5rem;
     height: 3rem;
     border-radius: 30px;
+  }
+  /*BLOCK2*/
+  .block2__img img{
+    width: 23rem;
+
+  }
+  .block2__text h2{
+    font-size: 2.5rem;
   }
 }
 
@@ -374,8 +392,20 @@ header {
   .block1 button i{
     font-size: 2rem;
   }
-}
+  
+  /*BLOCK2*/
 
+  .block2{
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 3rem;
+
+  }
+
+  .block2__text{
+    padding:5rem;
+  }
+}
 @media (width < 500px) {
   /*HEADER*/
   .box1 h1 {
@@ -397,6 +427,9 @@ header {
   .block1 select{
     font-size: 0.9rem;
   }
+  .block2__text{
+    padding:2rem;
+  }
 }
 
 @media (width < 400px) {
@@ -404,4 +437,11 @@ header {
   .box1 h1 {
     font-size: 1.4rem;
   }
+  /*block2*/
+  .block2__img img{
+    width: 20rem;
+    
+  }
 }
+
+
