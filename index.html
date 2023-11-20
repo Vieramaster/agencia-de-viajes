@@ -51,25 +51,26 @@
         <section class="block1">
           <div class="block1__wallpaper">
             <h2>Descubre tu próximo destino con nosotros</h2>
+            <form action="">
+              <fieldset>
+                <select name="place" id="place" required>
+                  <option value="">Indique el trayecto</option>
+                  <option value="national">Nacional</option>
+                  <option value="international"> Internacional</option>
+                </select>
+                <select name="location" id="location" required>
+                  <option value="">indique la localidad</option>
+                </select>
+                <select name="time" id="time" required>
+                  <option value="">indique la fecha</option>
+                </select>
+                <button type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </fieldset>
+            </form>
           </div>
-          <form action="">
-            <fieldset>
-              <select name="place" id="place" required>
-                <option value="">Indique el trayecto</option>
-                <option value="national">Nacional</option>
-                <option value="international"> Internacional</option>
-              </select>
-              <select name="location" id="location" required>
-                <option value="">indique la localidad</option>
-              </select>
-              <select name="time" id="time" required>
-                <option value="">indique la fecha</option>
-              </select>
-              <button type="submit">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-            </fieldset>
-          </form>
+
 
         </section>
         <section class="block2">

@@ -133,7 +133,7 @@ header {
   width: 80rem;
   height: 8rem;
   position: absolute;
-  bottom: 4rem;
+  bottom: -4rem;
   border-radius: 5px;
   left: 0;
   right: 0;
@@ -372,7 +372,7 @@ header {
     }
   .block1 form{
     height: auto;
-    width: 60%;
+    width: 80%;
   }
   .block1 fieldset{
     flex-direction: column;
@@ -390,7 +390,7 @@ header {
     border-radius: 0;
   }
   .block1 button i{
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   
   /*BLOCK2*/
