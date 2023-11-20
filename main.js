@@ -111,7 +111,7 @@ function carrouselMoveInternational(){
     "#internationalArrowLeft",
     "#internationalArrowRight",
     "#internationalCarrousel",
-    "#internationalCard" // Asegúrate de que este selector sea correcto para tus tarjetas internacionales
+    "#internationalCard" 
   );
 }
 
@@ -145,15 +145,15 @@ function InjectDOMCards() {
 
       function structureCards(data, div) {
         let structure = data.map((item) => {
-          return `<div class="carrouselBox__card" id="${div}">
-        <img src="${item.image}" alt="${item.city}">
-          <div class="carrouselBox__text">
-            <h3>${item.city}</h3>
-            <h4>${item.month} ${item.year}</h4>
-            <h3>${item.price}</h3>
-            <p>${item.nights} noches</p>
-          </div>
-      </div>
+          return `<li class="carrouselBox__card" id="${div}">
+                    <img src="${item.image}" alt="${item.city}">
+                      <div class="carrouselBox__text">
+                        <h3>${item.city}</h3>
+                        <h4>${item.month} ${item.year}</h4>
+                        <h3>${item.price}</h3>
+                        <p>${item.nights} noches</p>
+                      </div>
+                  </li>
         `;
         });
         let finalStructure = structure.join("");

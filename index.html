@@ -15,6 +15,7 @@
   <body>
     <header>
       <div class="box1">
+        <img src="/images/icons&logo/logo.svg" alt="logoCompany">
         <h1>Handrik Travel</h1>
         <button class="box1__responsive--open">
           <i class="fa-solid fa-bars"></i>
@@ -46,96 +47,46 @@
         </div>
       </div>
     </header>
-    <section class="block1">
-      <div class="block1__box">
-        <form action="#" class="block1__box--form">
-          <fieldset>
-            <select name="" id="">
-              <option value="">eliga el destino</option>
-              <option value="">Nacional</option>
-              <option value="">Iternacional</option>
-            </select>
-            <select name="" id="">
-              <option value="">eliga la ciudad</option>
-            </select>
-            <select name="" id="">
-              <option value="">eliga la fecha</option>
-            </select>
-            <button type="submit">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </fieldset>
-        </form>
-      </div>
-    </section>
-    <section class="block2" id="block2" >
-         
-      <div class="block2__box">
+      <main>
+        <section class="block1">
+          <div class="block1__wallpaper">
+            <h2>Descubre tu próximo destino con nosotros</h2>
+          </div>
+          <form action="">
+            <fieldset>
+              <select name="place" id="place" required>
+                <option value="">Indique el trayecto</option>
+                <option value="national">Nacional</option>
+                <option value="international"> Internacional</option>
+              </select>
+              <select name="location" id="location" required>
+                <option value="">indique la localidad</option>
+              </select>
+              <select name="time" id="time" required>
+                <option value="">indique la fecha</option>
+              </select>
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </fieldset>
+          </form>
 
-        <div class="block2__boxText">
-          <h2>PAQUETES NACIONALES</h2>
-          <p>
-            ¡Descubre la belleza de nuestro país con nuestros paquetes de viaje nacionales! Explora destinos impresionantes, disfruta de la rica cultura y la deliciosa gastronomía local. ¡Es hora de vivir aventuras inolvidables y crear recuerdos que durarán toda la vida! ¡Reserva tu paquete hoy!
-          </p>
-        </div>
-        <div class="block2__box--Box">
-          <div class="carrouselBox__arrow">
-            <button class="carrouselBox__arrow--left" id="nationalArrowLeft">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="carrouselBox__arrow--right" id="nationalArrowRight">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
+        </section>
+        <section class="block2">
+          <div class="block2__text">
+              <h2>Handrik Travel</h2>
+              <p>Somos una agencia de viajes dedicada a hacer realidad tus sueños de explorar el mundo. Con años de experiencia en la industria de viajes, nuestro equipo de expertos se esfuerza por proporcionar experiencias de viaje inolvidables adaptadas a tus necesidades individuales. <br>
+                En Handrik Travel, tu satisfacción es nuestra prioridad. Estamos comprometidos a proporcionar un servicio excepcional y a superar tus expectativas en cada paso del camino. ¡Ven y descubre el mundo con nosotros!</p>
           </div>
-          <div class="carrouselBox">
-            <div class="carrouselBox__container" id="nationalCarrousel"></div>
+          <div class="block2__img">
+            <picture>
+              <img src="/images/background/background-block2.png" alt="ilustrative image">
+            </picture>
           </div>
-        </div>
-        
-      </div>
-      <div class="block2__banner">
-        <div class="block2__banner--bubble">
-          <h3>10 AÑOS</h3>
-          <h4>de experiencia</h4>
-        </div>
-        <div class="block2__banner--bubble">
-          <h3>1 MILLON</h3>
-          <h4>de clientes</h4>
-        </div>
-        <div class="block2__banner--bubble">
-          <h3>4.7 RATING</h3>
-          <h4>en Booking</h4>
-        </div>
-        <div class="block2__banner--bubble">
-          <h3>LA MEJOR</h3>
-          <h4>cobertura medica</h4>
-        </div>
-      </div>
-      <div class="block2__box">
-        <div class="block2__boxText">
-          <h2>PAQUETES INTERNACIONALES</h2>
-          <p>
-            ¡Embárcate en una aventura internacional con nuestros paquetes de viaje! Descubre destinos exóticos, sumérgete en culturas fascinantes y saborea la gastronomía mundial. ¡Es tu oportunidad de crear recuerdos globales! ¡Reserva tu paquete internacional hoy!
-          </p>
-        </div>
-        <div class="block2__box--Box">
-          <div class="carrouselBox__arrow">
-            <button class="carrouselBox__arrow--left" id="internationalArrowLeft">
-              <i class="fa-solid fa-chevron-left"></i>
-            </button>
-            <button class="carrouselBox__arrow--right" id="internationalArrowRight">
-              <i class="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
-          <div class="carrouselBox">
-            <div class="carrouselBox__container" id="internationalCarrousel">
+        </section>
+      </main>
 
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </section>
+
   </body>
 </html>
 
