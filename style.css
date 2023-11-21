@@ -30,7 +30,7 @@ header,
   align-items: center;
   height: 100%;
 }
-.box1__responsive--open {
+.box1__responsive__open {
   display: none;
 }
 
@@ -55,7 +55,7 @@ header {
   height: 90%;
   margin: 0 0.5rem 0 1rem;
 }
-.box2__responsive--close {
+.box2__responsive__close {
   display: none;
 }
 .box2 ul {
@@ -182,7 +182,7 @@ header {
 
 /*BLOCK2*/
 
-.block2{
+.block2 {
   width: 100%;
   height: auto;
   padding-bottom: 6rem;
@@ -192,74 +192,174 @@ header {
 
 .block2__text {
   flex: 50%;
-
 }
-.block2__img{
+.block2__img {
   flex: 50%;
 }
-.block2__text{
+.block2__text {
   height: auto;
   padding-left: 5rem;
   display: flex;
   flex-direction: column;
   gap: 3rem;
   justify-content: center;
-  
-
 }
-.block2__text h2{
+.block2__text h2 {
   font-size: 3rem;
   font-weight: 600;
   color: var(--secondary-color);
   border-bottom: var(--fifth-color) 4px solid;
   width: auto;
   line-height: 1;
-  
 }
 
-.block2__text h2::after{
+.block2__text h2::after {
   content: "";
   left: 0;
   top: 0;
-  
 }
 
-.block2__text p{
+.block2__text p {
   color: var(--secondary-color);
   font-size: 1.2rem;
   font-style: italic;
-  
 }
 
-.block2__img{
+.block2__img {
   display: grid;
   place-content: center;
-  
 }
 
-
-.block2__img img{
+.block2__img img {
   width: 38rem;
   filter: drop-shadow(4px 4px 13px #000000);
-
-  
 }
 
 /* BLOCK3 */
 
-.block3{
+.block3 {
   width: 100%;
   height: 80rem;
   background-image: url(/images/background/topography.svg);
-
- 
   background-color: var(--eighth--color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.block3::after{
-  content: "";
-  opacity: 0.3;
+.block3 h2{
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+  width: auto;
+  line-height: 1;
+
+  margin: 5rem ;
 }
+
+.block3__carrouselBox{
+ 
+  width: 100%;
+  height: 30rem;
+  display: flex;
+  place-content: center;
+}
+
+.block3__carrousel{
+  width: 80%;
+  height: 100%;
+  
+  display: flex;
+}
+
+.block3__card{
+  width: 25%;
+  margin:  0 0.5rem;
+  height: 100%;
+  background-color:var(--primary-color);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 4px 1px #000000;
+  position: relative;
+
+}
+.block3__card__img{
+  width: 100%;
+  height: 17rem;
+  overflow: hidden;
+
+}
+.block3__card__img img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s all ease;
+
+
+}
+
+
+.block3__card:hover img{
+  transform: scale(1.1);
+}
+
+.block3__card__text{
+  display: grid;
+  padding: 1rem;
+  gap: 1rem;
+  text-align: center;
+}
+.block3__card__text h3{
+  color: var(--secondary-color);
+  font-size: 2.2rem;
+  font-weight: 600;
+
+  
+}
+.block3__card__text h3:first-child{
+  margin-top: 1rem;
+  line-height: 0.8;
+}
+.block3__card__text h4{
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--fifth-color);
+ }
+
+.block3__card__text p{
+  font-style: italic;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--fifth-color);
+}
+
+.block3__card__circles{
+  position: absolute;
+  width: 100%;
+  
+
+  bottom: 12rem;
+  height: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.block3__card__circle{
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  display: grid;
+  place-content: center;
+
+}
+
+.block3__card__circle i{
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
 
 @media (width < 1300px) {
   /*HEADER*/
@@ -281,23 +381,21 @@ header {
     display: none;
   }
 
-  .block1__wallpaper h2{
+  .block1__wallpaper h2 {
     font-size: 3rem;
     width: 25rem;
   }
-/*BLOCK1*/
+  /*BLOCK1*/
   .block1 form {
     width: 50rem;
     height: 6rem;
-
   }
-  
+
   .block1 fieldset {
-   
     height: 100%;
     gap: 1rem;
   }
-  
+
   .block1 select,
   .block1 button {
     padding: 0 1.5rem;
@@ -305,11 +403,10 @@ header {
     border-radius: 30px;
   }
   /*BLOCK2*/
-  .block2__img img{
+  .block2__img img {
     width: 23rem;
-
   }
-  .block2__text h2{
+  .block2__text h2 {
     font-size: 2.5rem;
   }
 }
@@ -328,7 +425,7 @@ header {
     font-size: 2.5rem;
   }
 
-  .box1__responsive--open {
+  .box1__responsive__open {
     display: block;
     width: 3.5rem;
     height: 3.5rem;
@@ -367,7 +464,7 @@ header {
     height: 4rem;
   }
 
-  .box2__responsive--close {
+  .box2__responsive__close {
     display: block;
     display: flex;
     height: 5rem;
@@ -375,52 +472,51 @@ header {
     justify-content: flex-end;
     align-items: center;
   }
-  .box2__responsive--close {
+  .box2__responsive__close {
     margin-right: 3rem;
   }
-  .box2__responsive--close i {
+  .box2__responsive__close i {
     font-size: 3.5rem;
     color: var(--secondary-color);
   }
 
-    /*BLOCK1*/
-    .block1__wallpaper h2{
-      top: 7rem;
-    }
-  .block1 form{
+  /*BLOCK1*/
+  .block1__wallpaper h2 {
+    top: 7rem;
+  }
+  .block1 form {
     height: auto;
     width: 80%;
   }
-  .block1 fieldset{
+  .block1 fieldset {
     flex-direction: column;
     width: 100%;
     gap: 0;
-    
   }
-  .block1 select{
+  .block1 select {
     text-align: center;
     border: 0;
     border-bottom: 1px solid var(--fifth-color);
   }
-  .block1 button, .block1 select{
+  .block1 button,
+  .block1 select {
     width: 100%;
     border-radius: 0;
   }
-  .block1 button i{
+  .block1 button i {
     font-size: 1.5rem;
   }
-  
+
   /*BLOCK2*/
 
-  .block2{
+  .block2 {
     flex-direction: column;
     height: auto;
     margin-bottom: 3rem;
-
   }
 
-  .block2__text{
-    padding:5rem;
+  .block2__text {
+    padding: 5rem;
   }
 }
 @media (width < 500px) {
@@ -428,24 +524,23 @@ header {
   .box1 h1 {
     font-size: 2rem;
   }
-  .box1__responsive--open {
+  .box1__responsive__open {
     width: 3rem;
     height: 3rem;
   }
-  .box1__responsive--open i {
+  .box1__responsive__open i {
     font-size: 1.75rem;
-
   }
   /*BLOCK1*/
-  .block1__wallpaper h2{
+  .block1__wallpaper h2 {
     font-size: 2rem;
     width: 17rem;
   }
-  .block1 select{
+  .block1 select {
     font-size: 0.9rem;
   }
-  .block2__text{
-    padding:2rem;
+  .block2__text {
+    padding: 2rem;
   }
 }
 
@@ -455,10 +550,7 @@ header {
     font-size: 1.4rem;
   }
   /*block2*/
-  .block2__img img{
+  .block2__img img {
     width: 20rem;
-    
   }
 }
-
-
