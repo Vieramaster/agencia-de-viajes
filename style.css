@@ -239,14 +239,13 @@ header {
 
 .block3 {
   width: 100%;
-  height: 50rem;
+  height: 55rem;
   background-image: url(/images/background/topography.svg);
   background-color: var(--eighth--color);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-
 }
 
 .block3 h2 {
@@ -255,50 +254,48 @@ header {
   color: var(--secondary-color);
   width: auto;
   line-height: 1;
-  margin: 5rem;
+  margin: 5rem 2rem;
 }
 
-.block3__arrow{
-  width: 85%;
-
+.block3__arrow {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   position: absolute;
-  bottom: 20rem;
-  height: 4rem
+  z-index: 999;
+  bottom: 5rem;
+  height: 4rem;
+  gap: 4rem;
 }
 
-.block3__arrow button{
-  height: 100%;
+.block3__arrow button {
+  height: 4rem;
   width: 4rem;
   cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid var(--fifth-color);
 }
 
-.block3__arrow i{
-  font-size: 4rem;
-  color: var(--secondary-color);
+.block3__arrow i {
+  font-size: 3rem;
+  color: var(--fifth-color);
 }
 .block3__carrouselBox {
-  width: 80%;
+  width: 68rem;
   height: 32rem;
   overflow: hidden;
-
-
-
 }
 
 .block3__carrousel {
-  width: 250%;
-  margin-left: -25%;
+  width: 170rem;
+  margin-left: -17rem;
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  
 }
 
 .block3__card {
-  width: 24%;
-  
+  width: 16rem;
+
   margin: 1rem 0.5rem;
   height: 30rem;
   background-color: var(--primary-color);
@@ -324,9 +321,11 @@ header {
 }
 
 .block3__card__text {
+  padding-top: 1.5rem;
   display: grid;
-  padding: 1rem;
-  gap: 1rem;
+  height: 13rem;
+  justify-content: center;
+
   text-align: center;
 }
 .block3__card__text h3 {
@@ -335,7 +334,6 @@ header {
   font-weight: 600;
 }
 .block3__card__text h3:first-child {
-  margin-top: 1rem;
   line-height: 0.8;
 }
 .block3__card__text h4 {
@@ -374,6 +372,18 @@ header {
 .block3__card__circle i {
   font-size: 2rem;
   color: var(--primary-color);
+}
+
+.block4{
+  width: 100%;
+  height: 25rem;
+}
+
+.block4 video{
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-position:center;
 }
 
 @media (width < 1300px) {
@@ -423,6 +433,9 @@ header {
   }
   .block2__text h2 {
     font-size: 2.5rem;
+  }
+  .block3__carrouselBox {
+    width: 51rem;
   }
 }
 
@@ -533,7 +546,26 @@ header {
   .block2__text {
     padding: 5rem;
   }
+  .block3__carrouselBox {
+    width: 34rem;
+  }
 }
+@media (width < 670px) {
+  .block3 h2 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 3rem 5rem 2rem;
+    text-wrap: wrap;
+  }
+  .block3__carrouselBox {
+    width: 17rem;
+  }
+
+  .block3__arrow {
+    bottom: 7.5rem;
+  }
+}
+
 @media (width < 500px) {
   /*HEADER*/
   .box1 h1 {
@@ -557,6 +589,12 @@ header {
   .block2__text {
     padding: 2rem;
   }
+  .block3 h2 {
+    font-size: 2.5rem;
+  }
+  .block3__arrow {
+    bottom: 9rem;
+  }
 }
 
 @media (width < 400px) {
@@ -567,5 +605,12 @@ header {
   /*block2*/
   .block2__img img {
     width: 20rem;
+  }
+
+  .block3 h2 {
+    margin: 3rem auto;
+  }
+  .block3__arrow {
+    bottom: 7.5rem;
   }
 }

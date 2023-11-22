@@ -43,7 +43,7 @@ function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector,
     if (timer) {
       clearTimeout(timer);
     }
-    timer = setTimeout(nextCarrousel, 58000);
+    timer = setTimeout(nextCarrousel, 8000);
   }
 
   function disableButtons() {
@@ -65,12 +65,12 @@ function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector,
     let firstCard = document.querySelectorAll(cardSelector)[0];
     
     
-    carrousel.style.marginLeft = "-50%";
+    carrousel.style.marginLeft = "-34rem";
     carrousel.style.transition = "all 0.5s ease";
     setTimeout(() => {
       carrousel.style.transition = "none";
       carrousel.insertAdjacentElement("beforeend", firstCard);
-      carrousel.style.marginLeft = "-25%";
+      carrousel.style.marginLeft = "-17rem";
       enableButtons();
       resetTimer();
     }, 800);
@@ -86,7 +86,7 @@ function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector,
     setTimeout(() => {
       carrousel.style.transition = "none";
       carrousel.insertAdjacentElement("afterbegin", lastCard);
-      carrousel.style.marginLeft = "-25%";
+      carrousel.style.marginLeft = "-17rem";
       enableButtons();
       resetTimer();
     }, 800);
@@ -152,10 +152,7 @@ function InjectDOMCards() {
                       </div>
                       <div class="block3__card__circle">
                       ${item.locationImage}
-                      </div>
-                      <div class="block3__card__circle">
-                      ${item.pensionImage}
-                      </div>
+
                     </div>
                   </li>`;
         });
