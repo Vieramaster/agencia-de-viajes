@@ -6,12 +6,15 @@
         "city": "Bariloche",
         "image":"/images/cities/bariloche.webp",
         "month": "junio",
-        "year": ["2023","2024"],
+        "year": "2024",
         "price": "$120.800",
         "days": "8",
         "nights":"5",
-        "transport":"plane",
-        "pension": "complete"
+        "transport":"plane",      
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
         
     },
     {
@@ -26,7 +29,10 @@
         "days": "7",
         "nights":"5",
         "transport":"bus",
-        "pension": "half"
+        "pension": "half",
+        "transportImage":"<i class='fa-solid fa-bus-simple'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -40,7 +46,10 @@
         "days": "4",
         "nights":"3",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
 
 
@@ -56,7 +65,10 @@
         "days": "6",
         "nights":"5",
         "transport":"bus",
-        "pension": "half"
+        "pension": "half",
+        "transportImage":"<i class='fa-solid fa-bus-simple'></i>",
+        "locationImage":"<i class='fa-solid fa-umbrella-beach'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -70,7 +82,10 @@
         "days": "5",
         "nights":"4",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-umbrella-beach'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -84,7 +99,10 @@
         "days": "6",
         "nights":"5",
         "transport":"bus",
-        "pension": "half"
+        "pension": "half",
+        "transportImage":"<i class='fa-solid fa-bus-simple'></i>",
+        "locationImage":"<i class='fa-solid fa-umbrella-beach'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -98,7 +116,10 @@
         "days": "5",
         "nights":"4",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -112,7 +133,10 @@
         "days": "7",
         "nights":"6",
         "transport":"plane",
-        "pension": "half"
+        "pension": "half",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -126,7 +150,10 @@
         "days": "6",
         "nights":"5",
         "transport":"bus",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-bus-simple'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -140,7 +167,10 @@
         "days": "7",
         "nights":"6",
         "transport":"plane",
-        "pension": "half"
+        "pension": "half",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-water'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -154,7 +184,10 @@
         "days": "6",
         "nights":"5",
         "transport":"bus",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-bus-simple'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
 
     {
@@ -169,7 +202,10 @@
         "days": "7",
         "nights":"6",
         "transport":"plane",
-        "pension": "half"
+        "pension": "half",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "nacional",
@@ -183,7 +219,10 @@
         "days": "6",
         "nights":"5",
         "transport":"bus",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-bus-simple'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
 
     {
@@ -196,7 +235,10 @@
         "days": "15",
         "nights":"14",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-umbrella-beach'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -208,7 +250,10 @@
         "days": "16",
         "nights":"13",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-mountain'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -220,7 +265,10 @@
         "days": "17",
         "nights":"15",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-umbrella-beach'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -232,7 +280,10 @@
         "days": "18",
         "nights":"16",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -244,7 +295,10 @@
         "days": "19",
         "nights":"17",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -256,7 +310,10 @@
         "days": "20",
         "nights":"17",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -268,19 +325,25 @@
         "days": "19",
         "nights":"15",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
         "country": "Italia",
-        "city": "Roma",
+        "city": "Venecia",
         "month": "marzo",
         "year": "2024",
         "price": "$600.000",
         "days": "20",
         "nights":"16",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -292,7 +355,10 @@
         "days": "26",
         "nights":"22",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
@@ -304,32 +370,41 @@
         "days": "28",
         "nights":"24",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     
     {
         "place": "internacional",
         "country": "Grecia",
-        "city": "Atenas",
+        "city": "Corinto",
         "month": "agosto",
         "year": "2024",
         "price": "$850.000",
         "days": "26",
         "nights":"22",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     },
     {
         "place": "internacional",
         "country": "Turquía",
-        "city": "Estambul",
+        "city": "Bursa",
         "month": "septiembre",
         "year": "2024",
         "price": "$900.000",
         "days": "28",
         "nights":"24",
         "transport":"plane",
-        "pension": "complete"
+        "pension": "complete",
+        "transportImage":"<i class='fa-solid fa-plane'></i>",
+        "locationImage":"<i class='fa-solid fa-city'></i>",
+        "pensionImage":"<i class='fa-solid fa-utensils'></i>"
     }
 
 ]

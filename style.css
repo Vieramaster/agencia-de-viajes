@@ -239,104 +239,121 @@ header {
 
 .block3 {
   width: 100%;
-  height: 80rem;
+  height: 50rem;
   background-image: url(/images/background/topography.svg);
   background-color: var(--eighth--color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+
 }
 
-.block3 h2{
+.block3 h2 {
   font-size: 3.5rem;
   font-weight: 600;
   color: var(--secondary-color);
   width: auto;
   line-height: 1;
-
-  margin: 5rem ;
+  margin: 5rem;
 }
 
-.block3__carrouselBox{
- 
-  width: 100%;
-  height: 30rem;
+.block3__arrow{
+  width: 85%;
+
   display: flex;
-  place-content: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 20rem;
+  height: 4rem
 }
 
-.block3__carrousel{
+.block3__arrow button{
+  height: 100%;
+  width: 4rem;
+  cursor: pointer;
+}
+
+.block3__arrow i{
+  font-size: 4rem;
+  color: var(--secondary-color);
+}
+.block3__carrouselBox {
   width: 80%;
-  height: 100%;
-  
-  display: flex;
+  height: 32rem;
+  overflow: hidden;
+
+
+
 }
 
-.block3__card{
-  width: 25%;
-  margin:  0 0.5rem;
+.block3__carrousel {
+  width: 250%;
+  margin-left: -25%;
   height: 100%;
-  background-color:var(--primary-color);
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.block3__card {
+  width: 24%;
+  
+  margin: 1rem 0.5rem;
+  height: 30rem;
+  background-color: var(--primary-color);
   position: relative;
   overflow: hidden;
   box-shadow: 0px 0px 4px 1px #000000;
   position: relative;
-
 }
-.block3__card__img{
+.block3__card__img {
   width: 100%;
   height: 17rem;
   overflow: hidden;
-
 }
-.block3__card__img img{
+.block3__card__img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: 0.4s all ease;
-
-
 }
 
-
-.block3__card:hover img{
+.block3__card:hover img {
   transform: scale(1.1);
 }
 
-.block3__card__text{
+.block3__card__text {
   display: grid;
   padding: 1rem;
   gap: 1rem;
   text-align: center;
 }
-.block3__card__text h3{
+.block3__card__text h3 {
   color: var(--secondary-color);
   font-size: 2.2rem;
   font-weight: 600;
-
-  
 }
-.block3__card__text h3:first-child{
+.block3__card__text h3:first-child {
   margin-top: 1rem;
   line-height: 0.8;
 }
-.block3__card__text h4{
+.block3__card__text h4 {
   font-size: 1.5rem;
   font-weight: 500;
   color: var(--fifth-color);
- }
+}
 
-.block3__card__text p{
+.block3__card__text p {
   font-style: italic;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: var(--fifth-color);
 }
 
-.block3__card__circles{
+.block3__card__circles {
   position: absolute;
   width: 100%;
-  
 
   bottom: 12rem;
   height: auto;
@@ -344,7 +361,7 @@ header {
   justify-content: flex-end;
 }
 
-.block3__card__circle{
+.block3__card__circle {
   width: 3.5rem;
   height: 3.5rem;
   background-color: var(--secondary-color);
@@ -352,14 +369,12 @@ header {
   margin: 0 0.5rem;
   display: grid;
   place-content: center;
-
 }
 
-.block3__card__circle i{
+.block3__card__circle i {
   font-size: 2rem;
   color: var(--primary-color);
 }
-
 
 @media (width < 1300px) {
   /*HEADER*/
@@ -431,7 +446,7 @@ header {
     height: 3.5rem;
     border-radius: 50%;
   }
-  .box1__responsive--open i {
+  .box1__responsive__open i {
     font-size: 3rem;
     color: var(--secondary-color);
   }

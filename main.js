@@ -1,7 +1,7 @@
 /*responsive menu*/
 
-const btnOpen = document.querySelector(".box1__responsive--open");
-const btnClose = document.querySelector(".box2__responsive--close");
+const btnOpen = document.querySelector(".box1__responsive__open");
+const btnClose = document.querySelector(".box2__responsive__close");
 const navBox = document.querySelector(".box2");
 
 btnOpen.addEventListener("click", () => {
@@ -26,16 +26,12 @@ window.addEventListener("resize", () => {
 
 /* carrousel*/
 
-const carrouselNational = document.querySelector(
-  "#nationalCarrousel"
-);
-const carrouselInternational = document.querySelector("#internationalCarrousel")
-function carrouselMove(
-  arrowLeftSelector,
-  arrowRightSelector,
-  carrouselSelector,
-  cardSelector
-) {
+const carrouselNational = document.querySelector(".block3__carrousel");
+const carrouselInternational = document.querySelector("#internationalCarrousel");
+
+
+
+function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector, cardSelector) {
   const arrowLeft = document.querySelector(arrowLeftSelector);
   const arrowRight = document.querySelector(arrowRightSelector);
   const carrousel = document.querySelector(carrouselSelector);
@@ -47,7 +43,7 @@ function carrouselMove(
     if (timer) {
       clearTimeout(timer);
     }
-    timer = setTimeout(nextCarrousel, 5000);
+    timer = setTimeout(nextCarrousel, 58000);
   }
 
   function disableButtons() {
@@ -63,18 +59,21 @@ function carrouselMove(
   carrousel.insertAdjacentElement("afterbegin", lastCard);
 
   function nextCarrousel() {
+
+    
     disableButtons();
     let firstCard = document.querySelectorAll(cardSelector)[0];
-
-    carrousel.style.marginLeft = "-32rem";
+    
+    
+    carrousel.style.marginLeft = "-50%";
     carrousel.style.transition = "all 0.5s ease";
     setTimeout(() => {
       carrousel.style.transition = "none";
       carrousel.insertAdjacentElement("beforeend", firstCard);
-      carrousel.style.marginLeft = "-16rem";
+      carrousel.style.marginLeft = "-25%";
       enableButtons();
       resetTimer();
-    }, 500);
+    }, 800);
   }
 
   function prevCarrousel() {
@@ -87,33 +86,25 @@ function carrouselMove(
     setTimeout(() => {
       carrousel.style.transition = "none";
       carrousel.insertAdjacentElement("afterbegin", lastCard);
-      carrousel.style.marginLeft = "-16rem";
+      carrousel.style.marginLeft = "-25%";
       enableButtons();
       resetTimer();
-    }, 500);
+    }, 800);
   }
   resetTimer();
   arrowRight.addEventListener("click", nextCarrousel);
   arrowLeft.addEventListener("click", prevCarrousel);
 }
 
-function carrouselMoveNational(){
+function carrouselMoveNational() {
   carrouselMove(
-    "#nationalArrowLeft",
-    "#nationalArrowRight",
-    "#nationalCarrousel",
+    ".block3__arrow__left",
+    ".block3__arrow__right",
+    ".block3__carrousel",
     "#nationalCard"
   );
 }
 
-function carrouselMoveInternational(){
-  carrouselMove(
-    "#internationalArrowLeft",
-    "#internationalArrowRight",
-    "#internationalCarrousel",
-    "#internationalCard" 
-  );
-}
 
 async function dataJson() {
   return fetch("/data.json")
@@ -145,16 +136,28 @@ function InjectDOMCards() {
 
       function structureCards(data, div) {
         let structure = data.map((item) => {
-          return `<li class="carrouselBox__card" id="${div}">
-                    <img src="${item.image}" alt="${item.city}">
-                      <div class="carrouselBox__text">
-                        <h3>${item.city}</h3>
-                        <h4>${item.month} ${item.year}</h4>
-                        <h3>${item.price}</h3>
-                        <p>${item.nights} noches</p>
+          return `<li class="block3__card" id="${div}">
+                    <div class="block3__card__img">
+                      <img src="${item.image}" alt="${item.city}" />
+                    </div>
+                    <div class="block3__card__text">
+                      <h3>${item.city}</h3>
+                      <h4>${item.month} ${item.year}</h4>
+                      <h3>${item.price}</h3>
+                      <p>${item.days} dias y ${item.nights} noches</p>
+                    </div>
+                    <div class="block3__card__circles">
+                      <div class="block3__card__circle">
+                      ${item.transportImage}
                       </div>
-                  </li>
-        `;
+                      <div class="block3__card__circle">
+                      ${item.locationImage}
+                      </div>
+                      <div class="block3__card__circle">
+                      ${item.pensionImage}
+                      </div>
+                    </div>
+                  </li>`;
         });
         let finalStructure = structure.join("");
         return finalStructure;
@@ -168,14 +171,17 @@ function InjectDOMCards() {
       let randomNational = arrayRandom(randomIndex, nationalData);
       let randomInternational = arrayRandom(randomIndex, internationalData);
 
-      const structureNational = structureCards(randomNational,"nationalCard");
-      const structureInternational = structureCards(randomInternational, "internationalCard")
+      const structureNational = structureCards(randomNational, "nationalCard");
+      const structureInternational = structureCards(
+        randomInternational,
+        "internationalCard"
+      );
 
       carrouselNational.innerHTML = structureNational;
-      carrouselInternational.innerHTML = structureInternational
+      
 
-      carrouselMoveNational()
-      carrouselMoveInternational()
+      carrouselMoveNational();
+      
     })
     .catch((error) => {
       console.error("Hubo un error al obtener los datos:", error);
