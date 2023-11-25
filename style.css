@@ -502,11 +502,11 @@ header {
   margin-bottom: 2rem;
   line-height: 1;
 }
-
+/*MAPS*/
 .block6 {
   width: 100%;
-  height: 80rem;
-  background-color: aliceblue;
+  height: auto;
+ 
   display: flex;
   place-content: center;
 }
@@ -514,6 +514,7 @@ header {
 .block6__box {
   width: 80rem;
   height: 50rem;
+  margin-bottom: 5rem;
 
   display: flex;
   gap: 1rem;
@@ -543,22 +544,37 @@ header {
 .block6__box__card{
   position: absolute;
   opacity: 0;
+  display: none;
   width: 100%;
   height: 100%;
   top: 0;
 
 }
 .block6__box__card.active{
+  display: block;
   opacity: 1;
   
 }
 
+.block6__box__card{
+  overflow: hidden;
+  border: 2px solid var(--fifth-color);
+  border-radius: 10px 0 0 10px;
+  transition: opacity 1s ease-in-out;
+  
+
+}
 .block6__box__card img {
   object-fit: cover;
   width: 100%;
   height: 100%;
-  border-radius: 10px 0 0 10px;
-  border: 2px solid var(--fifth-color);
+  transition: 0.5s all ease;
+  
+  
+}
+
+.block6__box__card:hover img{
+  transform: scale(1.1);
 }
 .block6__box__card h2{
   position: absolute;
@@ -572,8 +588,25 @@ header {
   padding: 0 1rem;
 }
 
+.block6__card__text{
+  position: absolute;
+  width: 100%;
+  height: 15rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  bottom: -15rem;
+  color: var(--primary-color);
+  font-style: italic;
+  text-align: center;
+  transition: 0.5s all ease;
+  padding: 1rem;
+  display: grid;
+  place-content: center;
 
+}
 
+.block6__box__card:hover .block6__card__text{
+  bottom: 0;
+}
 .block6__map__point li {
   position: absolute;
   width: 1rem;
@@ -726,6 +759,14 @@ header {
   .block6__map__text li{
     font-size: 1.2rem;
     padding: 0.5rem 0.75rem;
+  }
+  .block6__card__text{
+    height: 20rem;
+    padding: 0.5rem;
+    bottom: -20rem;
+  }
+  .block6__box__banner h2{
+    font-size: 2rem;
   }
 }
 
@@ -908,6 +949,18 @@ header {
     font-size: 1.2rem;
     padding: 0.5rem 0.75rem;
   }
+  .block6__card__text{
+    height: 8rem;
+    padding: 0.5rem;
+    bottom: -8rem;
+  }
+
+  .block6__box__card h2{
+    font-size: 3rem;
+  }
+  .block6__box__card:hover h2{
+    display: none;
+  }
 }
 
 @media(width < 750px){
@@ -926,6 +979,15 @@ header {
   .block6__map__text li{
     font-size: 1rem;
     padding: 0.25rem 0.5rem;
+  }
+  .block6__card__text{
+    height: 100%;
+    padding: 0.5rem;
+    bottom: -100%;
+  }
+  .block6__box__card h2{
+    font-size: 2.5rem;
+    top:40%;
   }
 }
 
@@ -1010,6 +1072,12 @@ header {
   .block6__map__text li{
     font-size: 0.75rem;
     padding: 0.2rem 0.2rem;
+  }
+  .block6__card__text{
+    display: none;
+  }
+  .block6__box__card:hover h2{
+    display: block;
   }
 }
 

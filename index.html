@@ -23,7 +23,10 @@
       </div>
 
       <div class="box2">
-        <button class="box2__responsive__close" aria-label="cerrar menu responsivo">
+        <button
+          class="box2__responsive__close"
+          aria-label="cerrar menu responsivo"
+        >
           <i class="fa-solid fa-xmark"></i>
         </button>
         <nav>
@@ -31,8 +34,8 @@
             <li><a href="#national">Nacional</a></li>
             <li><a href="#International">Internacional</a></li>
             <li><a href="#service">Servicios</a></li>
-            <li><a href="#cruzeros">Cruzeros</a></li>
-            <li><a href="#">Contacto</a></li>
+            <li><a href="#cruise">Cruzeros</a></li>
+            <li><a href="#contact">Contacto</a></li>
           </ul>
         </nav>
       </div>
@@ -42,8 +45,12 @@
           <h2>(0223) 473-3685</h2>
         </div>
         <div class="box3__social">
-          <a href="https://www.facebook.com/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/?locale=es_LA" aria-label="facebook"
+            ><i class="fa-brands fa-facebook-f"></i
+          ></a>
+          <a href="https://www.instagram.com/" aria-label="instagram"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
         </div>
       </div>
     </header>
@@ -53,15 +60,30 @@
           <h2>Descubre tu próximo destino con nosotros</h2>
           <form action="">
             <fieldset>
-              <select name="place" id="place" required>
+              <select
+                name="place"
+                aria-label="Indique el trayecto"
+                id="place"
+                required
+              >
                 <option value="">Indique el trayecto</option>
                 <option value="national">Nacional</option>
                 <option value="international">Internacional</option>
               </select>
-              <select name="location" id="location" required>
+              <select
+                name="location"
+                id="location"
+                aria-label="indique la localidad"
+                required
+              >
                 <option value="">indique la localidad</option>
               </select>
-              <select name="time" id="time" required>
+              <select
+                name="time"
+                aria-label="indique la fecha"
+                id="time"
+                required
+              >
                 <option value="">indique la fecha</option>
               </select>
               <button type="submit" aria-label="enviar">
@@ -98,10 +120,10 @@
       <section class="block3" id="national">
         <h2>Paquetes nacionales</h2>
         <div class="block__arrow">
-          <button class="block__arrow__left" aria-label ="flecha izquierda">
+          <button class="block__arrow__left" aria-label="flecha izquierda">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button class="block__arrow__right"  aria-label ="flecha derecha">
+          <button class="block__arrow__right" aria-label="flecha derecha">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -226,10 +248,10 @@
       <section class="block5" id="International">
         <h2>Paquetes Internacionales</h2>
         <div class="block__arrow">
-          <button class="block__arrow__left" aria-label="flecha izquierda"> 
-            <i class="fa-solid fa-chevron-left" ></i>
+          <button class="block__arrow__left" aria-label="flecha izquierda">
+            <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button class="block__arrow__right"  aria-label="flecha derecha" >
+          <button class="block__arrow__right" aria-label="flecha derecha">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
@@ -237,70 +259,158 @@
           <ul class="block__carrousel"></ul>
         </div>
       </section>
-      <section class="block6" id="cruzeros">
-       
-       <div class="block6__box">
-        <div class="block6__box__banner">
-         
-         
-          <div class="block6__box__card">
-            <picture>
-              <img src="/images/background/buenosairesbanner1.webp" alt="Buenos Aires">
-            </picture>
-            <h2>Buenos Aires</h2>
+      <section class="block6" id="cruise">
+        <div class="block6__box">
+          <div class="block6__box__banner">
+            <div class="block6__box__card">
+              <picture>
+                <source
+                  media="(max-width: 950px)"
+                  srcset="/images/background/buenosairesbanner2.webp"
+                />
+                <img
+                  src="/images/background/buenosairesbanner1.webp"
+                  alt="Buenos Aires"
+                />
+              </picture>
+              <h2>Buenos Aires</h2>
+              <div class="block6__card__text">
+                <p>
+                  Buenos Aires, la vibrante capital de Argentina, es una ciudad
+                  de encanto histórico y moderno. Con su rica cultura,
+                  arquitectura impresionante, vida nocturna animada, deliciosa
+                  gastronomía y apasionado tango, ¡Buenos Aires te espera para
+                  descubrir su magia!
+                </p>
+              </div>
+            </div>
+            <div class="block6__box__card">
+              <picture>
+                <source
+                  media="(max-width: 950px)"
+                  srcset="/images/background/riobanner2.webp"
+                />
+                <img
+                  src="/images/background/riobanner1.webp"
+                  alt="Rio de Janeiro"
+                />
+              </picture>
+              <h2>Rio de Janeiro</h2>
+              <div class="block6__card__text">
+                <p>
+                  Con su encanto inigualable, esta metrópolis ofrece una rica
+                  cultura, arquitectura impresionante, vida nocturna vibrante,
+                  deliciosa gastronomía y el apasionado tango. ¡Un lugar lleno
+                  de magia que te espera para descubrirlo!
+                </p>
+              </div>
+            </div>
+            <div class="block6__box__card">
+              <picture>
+                <source
+                  media="(max-width: 950px)"
+                  srcset="/images/background/recifebanner2.webp"
+                />
+                <img src="/images/background/recifebanner1.webp" alt="Recife" />
+              </picture>
+              <h2>Recife</h2>
+              <div class="block6__card__text">
+                <p>
+                  Recife, conocida como la Venecia de Brasil, es una ciudad
+                  llena de encanto con sus numerosos ríos y puentes. Con su
+                  vibrante cultura, música contagiosa de frevo, impresionantes
+                  playas y el histórico barrio de Olinda, ¡Recife te invita a
+                  vivir una experiencia inolvidable!
+                </p>
+              </div>
+            </div>
+            <div class="block6__box__card">
+              <picture>
+                <source
+                  media="(max-width: 950px)"
+                  srcset="images/background/laspalmasbanner2.webp"
+                />
+                <img
+                  src="/images/background/laspalmasbanner1.webp"
+                  alt="Las Palmas"
+                />
+              </picture>
+              <h2>Las Palmas</h2>
+              <div class="block6__card__text">
+                <p>
+                  Esta ciudad, un paraíso en las Islas Canarias, te cautivará
+                  con sus hermosas playas, su vibrante vida nocturna, su rica
+                  historia y cultura, y su clima cálido durante todo el año. ¡Un
+                  destino lleno de encanto y belleza que te espera para
+                  explorarlo!
+                </p>
+              </div>
+            </div>
+            <div class="block6__box__card">
+              <picture>
+                <source
+                  media="(max-width: 950px)"
+                  srcset="images/background/barcelonabanner2.webp"
+                />
+                <img
+                  src="/images/background/barcelonabanner1.webp"
+                  alt="Barcelona"
+                />
+              </picture>
+              <h2>Barcelona</h2>
+              <div class="block6__card__text">
+                <p>
+                  Esta ciudad, un joyero de la cultura catalana, te deslumbrará
+                  con su impresionante arquitectura modernista, su vibrante vida
+                  nocturna, su rica historia y su deliciosa gastronomía. ¡Un
+                  destino lleno de arte y belleza que te espera para explorarlo!
+                </p>
+              </div>
+            </div>
+            <div class="block6__box__card active">
+              <picture>
+                <source
+                  media="(max-width: 950px)"
+                  srcset="images/background/cruisebanner-2.webp"
+                />
+                <img
+                  src="/images/background/cruisebanner-1.webp"
+                  alt="cruzero"
+                />
+              </picture>
+              <h2>Cruzeros</h2>
+              <div class="block6__card__text">
+                <p>
+                  MSC Cruceros es una empresa líder en cruceros, conocida por su
+                  excepcional hospitalidad, cómodas instalaciones,
+                  entretenimiento de alta calidad y destinos fascinantes. ¡Ven y
+                  descubre el mundo con nosotros!
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="block6__box__card">
-            <picture>
-              <img src="/images/background/riobanner1.webp" alt="Rio de Janeiro">
-            </picture>
-            <h2>Rio de Janeiro</h2>
-          </div>
-          <div class="block6__box__card">
-            <picture>
-              <img src="/images/background/recifebanner1.webp" alt="Recife">
-            </picture>
-            <h2>Recife</h2>
-          </div>
-          <div class="block6__box__card">
-            <picture>
-              <img src="/images/background/laspalmasbanner1.webp" alt="Las Palmas">
-            </picture>
-            <h2>Las Palmas</h2>
-          </div>
-          <div class="block6__box__card">
-            <picture>
-              <img src="/images/background/barcelonabanner1.webp" alt="Barcelona">
-            </picture>
-            <h2>Barcelona</h2>
-          </div>
-          <div class="block6__box__card active">
-            <picture>
-              <img src="/images/background/cruisebanner-1.webp" alt="cruzero">
-            </picture>
-            <h2>Cruzeros</h2>
+          <div class="block6__box__map">
+            <ul class="block6__map__point">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+            <ul class="block6__map__text">
+              <li></li>
+              <li>Buenos Aires</li>
+              <li>Rio de Janeiro</li>
+              <li>Recife</li>
+              <li>Las Palmas</li>
+              <li>Barcelona</li>
+            </ul>
           </div>
         </div>
-        <div class="block6__box__map">
-          <ul class="block6__map__point">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-          <ul class="block6__map__text">
-            <li></li>
-            <li>Buenos Aires</li>
-            <li>Rio de Janeiro</li>
-            <li>Recife</li>
-            <li>Las Palmas</li>
-            <li>Barcelona</li>
-          </ul>
-         </div>
-       </div>
-       
-
       </section>
+      <footer>
+        
+      </footer>
     </main>
   </body>
 </html>
