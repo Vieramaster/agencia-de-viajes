@@ -26,12 +26,17 @@ window.addEventListener("resize", () => {
 
 /* carrousel*/
 
-const carrouselNational = document.querySelector(".block3__carrousel");
-const carrouselInternational = document.querySelector("#internationalCarrousel");
+const carrouselNational = document.querySelector(".block3 .block__carrousel");
+const carrouselInternational = document.querySelector(
+  ".block5 .block__carrousel"
+);
 
-
-
-function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector, cardSelector) {
+function carrouselMove(
+  arrowLeftSelector,
+  arrowRightSelector,
+  carrouselSelector,
+  cardSelector
+) {
   const arrowLeft = document.querySelector(arrowLeftSelector);
   const arrowRight = document.querySelector(arrowRightSelector);
   const carrousel = document.querySelector(carrouselSelector);
@@ -59,12 +64,9 @@ function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector,
   carrousel.insertAdjacentElement("afterbegin", lastCard);
 
   function nextCarrousel() {
-
-    
     disableButtons();
     let firstCard = document.querySelectorAll(cardSelector)[0];
-    
-    
+
     carrousel.style.marginLeft = "-34rem";
     carrousel.style.transition = "all 0.5s ease";
     setTimeout(() => {
@@ -98,13 +100,20 @@ function carrouselMove(arrowLeftSelector, arrowRightSelector, carrouselSelector,
 
 function carrouselMoveNational() {
   carrouselMove(
-    ".block3__arrow__left",
-    ".block3__arrow__right",
-    ".block3__carrousel",
-    "#nationalCard"
+    ".block3 .block__arrow__left",
+    ".block3 .block__arrow__right",
+    ".block3 .block__carrousel",
+    ".block3 #nationalCard"
   );
 }
-
+function carroselMoveInternational() {
+  carrouselMove(
+    ".block5 .block__arrow__left",
+    ".block5 .block__arrow__right",
+    ".block5 .block__carrousel",
+    ".block5 #internationalCard"
+  );
+}
 
 async function dataJson() {
   return fetch("/data.json")
@@ -136,21 +145,21 @@ function InjectDOMCards() {
 
       function structureCards(data, div) {
         let structure = data.map((item) => {
-          return `<li class="block3__card" id="${div}">
-                    <div class="block3__card__img">
+          return `<li class="block__card" id="${div}">
+                    <div class="block__card__img">
                       <img src="${item.image}" alt="${item.city}" />
                     </div>
-                    <div class="block3__card__text">
+                    <div class="block__card__text">
                       <h3>${item.city}</h3>
                       <h4>${item.month} ${item.year}</h4>
                       <h3>${item.price}</h3>
                       <p>${item.days} dias y ${item.nights} noches</p>
                     </div>
-                    <div class="block3__card__circles">
-                      <div class="block3__card__circle">
+                    <div class="block__card__circles">
+                      <div class="block__card__circle">
                       ${item.transportImage}
                       </div>
-                      <div class="block3__card__circle">
+                      <div class="block__card__circle">
                       ${item.locationImage}
 
                     </div>
@@ -175,10 +184,10 @@ function InjectDOMCards() {
       );
 
       carrouselNational.innerHTML = structureNational;
-      
+      carrouselInternational.innerHTML = structureInternational;
 
       carrouselMoveNational();
-      
+      carroselMoveInternational();
     })
     .catch((error) => {
       console.error("Hubo un error al obtener los datos:", error);
@@ -186,3 +195,41 @@ function InjectDOMCards() {
 }
 
 window.addEventListener("DOMContentLoaded", InjectDOMCards);
+
+/*BLOCK4 CARDS*/
+
+const Li = document.querySelectorAll(".block4__li");
+const card = document.querySelectorAll(".block4__box__card");
+const cardIcon = document.querySelectorAll(".block4__li  i");
+const cardP = document.querySelectorAll(".block4__li  p");
+
+Li.forEach((cadaLi, i) => {
+  cadaLi.addEventListener("click", () => {
+    Li.forEach((cadaLi, subI) => {
+      cadaLi.classList.remove("active");
+      card[subI].classList.remove("active");
+      cardIcon[subI].classList.remove("active");
+      cardP[subI].classList.remove("active");
+    });
+
+    cadaLi.classList.add("active");
+    card[i].classList.add("active");
+    cardIcon[i].classList.add("active");
+    cardP[i].classList.add("active");
+  });
+});
+
+/* CRUISE MAP*/
+
+const pointsLi = document.querySelectorAll(".block6__map__point li");
+const mapCard = document.querySelectorAll(".block6__box__card");
+
+pointsLi.forEach((points, i) => {
+  points.addEventListener("click", () => {
+    mapCard.forEach(card => {
+      card.classList.remove("active");
+    });
+
+    mapCard[i].classList.add("active");
+  });
+});

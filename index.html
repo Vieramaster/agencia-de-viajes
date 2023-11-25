@@ -17,21 +17,21 @@
       <div class="box1">
         <img src="/images/icons&logo/logo.svg" alt="logoCompany" />
         <h1>Handrik Travel</h1>
-        <button class="box1__responsive__open">
+        <button class="box1__responsive__open" aria-label="menu responsivo">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
 
       <div class="box2">
-        <button class="box2__responsive__close">
+        <button class="box2__responsive__close" aria-label="cerrar menu responsivo">
           <i class="fa-solid fa-xmark"></i>
         </button>
         <nav>
           <ul>
-            <li><a href="#block3">Nacional</a></li>
-            <li><a href="#">Internacional</a></li>
-            <li><a href="#">Aventura</a></li>
-            <li><a href="#">Cruzeros</a></li>
+            <li><a href="#national">Nacional</a></li>
+            <li><a href="#International">Internacional</a></li>
+            <li><a href="#service">Servicios</a></li>
+            <li><a href="#cruzeros">Cruzeros</a></li>
             <li><a href="#">Contacto</a></li>
           </ul>
         </nav>
@@ -42,8 +42,8 @@
           <h2>(0223) 473-3685</h2>
         </div>
         <div class="box3__social">
-          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.facebook.com/?locale=es_LA"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
         </div>
       </div>
     </header>
@@ -64,7 +64,7 @@
               <select name="time" id="time" required>
                 <option value="">indique la fecha</option>
               </select>
-              <button type="submit">
+              <button type="submit" aria-label="enviar">
                 <i class="fa-solid fa-magnifying-glass"></i>
               </button>
             </fieldset>
@@ -95,49 +95,211 @@
           </picture>
         </div>
       </section>
-      <section class="block3" id="block3">
+      <section class="block3" id="national">
         <h2>Paquetes nacionales</h2>
-        <div class="block3__arrow">
-          <button class="block3__arrow__left">
+        <div class="block__arrow">
+          <button class="block__arrow__left" aria-label ="flecha izquierda">
             <i class="fa-solid fa-chevron-left"></i>
           </button>
-          <button class="block3__arrow__right">
+          <button class="block__arrow__right"  aria-label ="flecha derecha">
             <i class="fa-solid fa-chevron-right"></i>
           </button>
         </div>
-        <div class="block3__carrouselBox">
-          <ul class="block3__carrousel" id="carrousel"></ul>
+        <div class="block__carrouselBox">
+          <ul class="block__carrousel"></ul>
         </div>
       </section>
-      <section class="block4">
+      <section class="block4" id="service">
         <h2>Nuestros servicios</h2>
         <p>con nosotros tendras un viaje mas comodo</p>
+
         <ul>
-          <li>
-            <button>
-              <i class="fa-solid fa-hotel"></i>
-              <h3>Alojamiento</h3>
-            </button>
+          <li class="block4__li active">
+            <i class="fa-solid active fa-hotel"></i>
+            <p class="block4__p active">Mejor alojamiento</p>
           </li>
-          <li>
-            <button>
-              <i class="fa-solid fa-briefcase-medical"></i>
-              <h3>Seguro medico</h3>
-            </button>
+          <li class="block4__li">
+            <i class="fa-solid fa-briefcase-medical"></i>
+            <p>Seguro médico</p>
           </li>
-          <li>
-            <button>
-              <i class="fa-solid fa-person-hiking"></i>
-              <h3>Circuitos turísticos</h3>
-            </button>
+          <li class="block4__li">
+            <i class="fa-solid fa-person-hiking"></i>
+            <p>Circuito turístico</p>
           </li>
-          <li>
-            <button>
-              <i class="fa-solid fa-user-shield"></i>
-              <h3>Poliza de seguros</h3>
-            </button>
+          <li class="block4__li">
+            <i class="fa-solid fa-user-shield"></i>
+            <p>Póliza de seguros</p>
           </li>
         </ul>
+        <div class="block4__box">
+          <article class="block4__box__card active">
+            <img
+              src="/images/cards/accommodation.webp"
+              alt="Mejor alojamiento"
+              id="btn1"
+            />
+            <div class="block4__box__text">
+              <h3>Alojamiento</h3>
+              <p>
+                Nuestra agencia turismo ofrece excelentes opciones de
+                alojamiento para todos los viajeros. Contamos con una amplia
+                gama de alojamientos, desde hoteles de lujo hasta acogedores bed
+                and breakfast. Nuestro sistema de reservas es fácil de usar y
+                seguro, garantizando a los clientes una experiencia de reserva
+                sin problemas. Además, ofrecemos descripciones detalladas y
+                fotos de alta calidad de cada alojamiento, ayudando a los
+                viajeros a tomar decisiones informadas. En resumen, nos
+                esforzamos por hacer que la búsqueda del alojamiento perfecto
+                sea una experiencia agradable y sin estrés para nuestros
+                clientes.
+              </p>
+            </div>
+          </article>
+          <article class="block4__box__card">
+            <img
+              src="/images/cards/medical secure.webp"
+              alt="Seguro médico"
+              id="btn2"
+            />
+            <div class="block4__box__text">
+              <h3>Seguro médico</h3>
+              <p>
+                Nos enorgullece ofrecer excelentes opciones de seguro médico
+                para nuestros viajeros. Entendemos que la seguridad y la salud
+                son primordiales durante los viajes. Por eso, ofrecemos una
+                variedad de planes de seguro médico que cubren desde atención
+                médica de emergencia hasta evacuaciones médicas. Nuestro proceso
+                de compra es sencillo y seguro, proporcionando a los clientes
+                una experiencia sin complicaciones. Además, ofrecemos detalles
+                completos sobre cada plan de seguro, permitiendo a los viajeros
+                tomar decisiones informadas. En resumen, nos esforzamos por
+                garantizar que nuestros clientes viajen con tranquilidad.
+              </p>
+            </div>
+          </article>
+          <article class="block4__box__card">
+            <img
+              src="/images/cards/tourist circuit.webp"
+              alt="Circuitos turísticos"
+              id="btn3"
+            />
+            <div class="block4__box__text">
+              <h3>Circuitos turísticos</h3>
+              <p>
+                Ofrecemos circuitos turísticos excepcionales. Nosotros
+                entendemos que cada viajero tiene intereses únicos, por eso
+                ofrecemos una variedad de circuitos que abarcan diversas
+                atracciones y experiencias. Desde recorridos históricos hasta
+                aventuras al aire libre, nosotros nos esforzamos por ofrecer
+                experiencias inolvidables. Nuestro proceso de reserva es seguro
+                y fácil de usar, asegurando a los clientes una experiencia de
+                reserva sin problemas. En resumen, nosotros nos comprometemos a
+                hacer que la exploración del mundo sea accesible y emocionante
+                para todos nuestros clientes.
+              </p>
+            </div>
+          </article>
+          <article class="block4__box__card">
+            <img
+              src="/images/cards/life secure.webp"
+              alt="Poliza de seguros"
+              id="btn4"
+            />
+            <div class="block4__box__text">
+              <h3>Poliza de seguros</h3>
+              <p>
+                Descubre la tranquilidad de viajar con nosotros. En nuestra
+                agencia de turismo, nos enorgullece ofrecer pólizas de seguro
+                contra robo o fraude. Sabemos que la seguridad es una prioridad
+                para nuestros viajeros, por eso brindamos protección en caso de
+                robo o fraude. Nuestro proceso de compra es seguro y fácil de
+                usar, proporcionando una experiencia sin complicaciones. Además,
+                ofrecemos detalles completos sobre cada póliza de seguro,
+                permitiendo a los viajeros tomar decisiones informadas. En
+                resumen, nos comprometemos a garantizar que nuestros clientes
+                viajen con tranquilidad y seguridad.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section class="block5" id="International">
+        <h2>Paquetes Internacionales</h2>
+        <div class="block__arrow">
+          <button class="block__arrow__left" aria-label="flecha izquierda"> 
+            <i class="fa-solid fa-chevron-left" ></i>
+          </button>
+          <button class="block__arrow__right"  aria-label="flecha derecha" >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+        </div>
+        <div class="block__carrouselBox">
+          <ul class="block__carrousel"></ul>
+        </div>
+      </section>
+      <section class="block6" id="cruzeros">
+       
+       <div class="block6__box">
+        <div class="block6__box__banner">
+         
+         
+          <div class="block6__box__card">
+            <picture>
+              <img src="/images/background/buenosairesbanner1.webp" alt="Buenos Aires">
+            </picture>
+            <h2>Buenos Aires</h2>
+          </div>
+          <div class="block6__box__card">
+            <picture>
+              <img src="/images/background/riobanner1.webp" alt="Rio de Janeiro">
+            </picture>
+            <h2>Rio de Janeiro</h2>
+          </div>
+          <div class="block6__box__card">
+            <picture>
+              <img src="/images/background/recifebanner1.webp" alt="Recife">
+            </picture>
+            <h2>Recife</h2>
+          </div>
+          <div class="block6__box__card">
+            <picture>
+              <img src="/images/background/laspalmasbanner1.webp" alt="Las Palmas">
+            </picture>
+            <h2>Las Palmas</h2>
+          </div>
+          <div class="block6__box__card">
+            <picture>
+              <img src="/images/background/barcelonabanner1.webp" alt="Barcelona">
+            </picture>
+            <h2>Barcelona</h2>
+          </div>
+          <div class="block6__box__card active">
+            <picture>
+              <img src="/images/background/cruisebanner-1.webp" alt="cruzero">
+            </picture>
+            <h2>Cruzeros</h2>
+          </div>
+        </div>
+        <div class="block6__box__map">
+          <ul class="block6__map__point">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <ul class="block6__map__text">
+            <li></li>
+            <li>Buenos Aires</li>
+            <li>Rio de Janeiro</li>
+            <li>Recife</li>
+            <li>Las Palmas</li>
+            <li>Barcelona</li>
+          </ul>
+         </div>
+       </div>
+       
+
       </section>
     </main>
   </body>
