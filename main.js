@@ -31,6 +31,7 @@ const carrouselInternational = document.querySelector(
   ".block5 .block__carrousel"
 );
 
+/*carousel arrows and their automatic movement*/
 function carrouselMove(
   arrowLeftSelector,
   arrowRightSelector,
@@ -98,6 +99,7 @@ function carrouselMove(
   arrowLeft.addEventListener("click", prevCarrousel);
 }
 
+/*national package movement integration*/
 function carrouselMoveNational() {
   carrouselMove(
     ".block3 .block__arrow__left",
@@ -106,6 +108,7 @@ function carrouselMoveNational() {
     ".block3 #nationalCard"
   );
 }
+/*international package movement integration*/
 function carroselMoveInternational() {
   carrouselMove(
     ".block5 .block__arrow__left",
@@ -115,33 +118,35 @@ function carroselMoveInternational() {
   );
 }
 
+/*api order*/
 async function dataJson() {
   return fetch("/data.json")
     .then((response) => response.json())
     .catch(console.error);
 }
 
+/*creation of random cards placed on the DOM*/
 function InjectDOMCards() {
   dataJson()
     .then((data) => {
       function arrayFilter(data, info) {
         let array = data.filter((item) => item.place === info);
         return array;
-      }
+      } /*content separation*/
       function arrayRandom(randomIndex, info) {
         let random = randomIndex.map((item) => info[item]);
         return random;
-      }
+      } /*creation of the random card and the desired object*/
       function getRandomNumberCards(max) {
         let arrayNumbers = [];
         while (arrayNumbers.length < max) {
           let randomNumber = Math.floor(Math.random() * max);
           if (arrayNumbers.indexOf(randomNumber) === -1) {
-            arrayNumbers.push(randomNumber);
+            arrayNumbers.push(randomNumber);/*si el numero no esta en el array (-1) lo agrega)*/
           }
         }
         return arrayNumbers;
-      }
+      } /*creation of random numbers without repeating*/
 
       function structureCards(data, div) {
         let structure = data.map((item) => {
@@ -167,8 +172,10 @@ function InjectDOMCards() {
         });
         let finalStructure = structure.join("");
         return finalStructure;
-      }
+      } /*
+      structure creation*/
 
+      /* integration of the corresponding cards*/
       let nationalData = arrayFilter(data, "nacional");
       let internationalData = arrayFilter(data, "internacional");
 
@@ -186,6 +193,7 @@ function InjectDOMCards() {
       carrouselNational.innerHTML = structureNational;
       carrouselInternational.innerHTML = structureInternational;
 
+      /*integration of card movement functions*/
       carrouselMoveNational();
       carroselMoveInternational();
     })
@@ -223,13 +231,28 @@ Li.forEach((cadaLi, i) => {
 
 const pointsLi = document.querySelectorAll(".block6__map__point li");
 const mapCard = document.querySelectorAll(".block6__box__card");
+const mapText = document.querySelectorAll(".block6__card__text");
+const mapImg = document.querySelectorAll(".block6__box__card img");
+const mapTitle = document.querySelectorAll(".block6__box__card h2");
 
-pointsLi.forEach((points, i) => {
-  points.addEventListener("click", () => {
-    mapCard.forEach(card => {
-      card.classList.remove("active");
-    });
+pointsLi.forEach((point, i) => {
+  point.addEventListener("mouseover", () => {
+    if (window.innerWidth < 750) {
+      mapTitle[i].style.top = "0";
+    }
+    mapCard[i].style.opacity = "1";
+    mapText[i].style.bottom = "0";
+    mapImg[i].style.transform = "scale(1.1)";
+    mapTitle[i].style.top = "20%";
+  });
 
-    mapCard[i].classList.add("active");
+  point.addEventListener("mouseout", () => {
+    if (window.innerWidth < 750) {
+      mapTitle[i].style.top = "-20%";
+    }
+    mapCard[i].style.opacity = "0";
+    mapText[i].style.bottom = "-100%";
+    mapImg[i].style.transform = "scale(1)";
+    mapTitle[i].style.top = "-10%";
   });
 });
