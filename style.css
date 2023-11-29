@@ -727,6 +727,10 @@ footer {
   gap: 0.5rem;
 }
 
+.footer__box2, .footer__box2 h2, .footer__box2 li:last-child i{
+text-align: center;
+}
+}
 
 .footer__box3 p{
   margin-bottom: 2rem;
@@ -747,9 +751,12 @@ footer {
 .footer__box2 li:last-child{
   display: flex;
   gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
 }
 .footer__box2 li:last-child i{
   font-size: 2rem;
+ 
 }
 .footer__box3 form{
   width: 80%;
