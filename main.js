@@ -324,33 +324,3 @@ pointsLi.forEach((point, i) => {
   });
 });
 
-/*function searchBar(nationalData, internationalData){
-  
-  let valuePlace;
-
-  function itemValue(value){
-    value.addEventListener("change", (event) => {
-      valuePlace = event.target.value;
-      console.log(valuePlace);
-      itemLocation(valuePlace);
-    });
-  }
-
-  function itemLocation(newPlace){
-    let cities;
-    if(newPlace === "national"){
-      cities = nationalData.map(item => item.city);
-    } else if(newPlace === "international"){
-      cities = internationalData.map(item => item.city);
-    }
-
-    // Crear un string con las opciones del select
-    let options = cities.map(city => `<option value="${city}">${city}</option>`).join('');
-
-    // Agregar las opciones al select
-    Location.innerHTML = options;
-  }
-
-  itemValue(Place);
-}
-*/
