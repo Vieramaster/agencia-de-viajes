@@ -211,37 +211,65 @@ window.addEventListener("DOMContentLoaded", InjectDOMCards);
 
 /*search bar*/
 
-
 const place = document.getElementById("place");
+const textPlace = document.querySelector("#place option:first-child");
 const cityLocation = document.getElementById("location");
 const time = document.getElementById("time");
+const submit = document.querySelector(" .block1 form button");
 
 function searchBar(nationalData, internationalData) {
-    function newValue(item, callback) {
-      item.addEventListener("change", (event) => {
-        let itemValue = event.target.value;
-        callback(itemValue)
-      });
+  let selectedPlace, selectedCity, selectedTime;
+
+  //search values
+  function newValue(item, callback) {
+    item.addEventListener("change", (event) => {
+      let itemValue = event.target.value;
+      callback(itemValue);
+    });
+  }
+  //value for place
+  newValue(place, function (newValuePlace) {
+    let output;
+    selectedPlace = newValuePlace;
+    if (newValuePlace === "national") {
+      //search without repeating
+      let nationalValue = [...new Set(nationalData.map((item) => item.city))];
+      output = nationalValue;
+    } else if (newValuePlace === "international") {
+      let internationalValue = [
+        ...new Set(internationalData.map((item) => item.city)),
+      ];
+      output = internationalValue;
     }
 
-    newValue(place, function(newValuePlace) {
-      let output;
-      if (newValuePlace === "national") {
-        //search without repeating
-        let nationalValue = [...new Set(nationalData.map((item) => item.city))];
-        output = nationalValue;
-      } else if (newValuePlace === "international") {
-        let internationalValue = [...new Set(internationalData.map((item) => item.city))];
-        output = internationalValue;
-      }
+    let insert = output
+      .map((item) => `<option value="${item}">${item}</option>`)
+      .join("");
+    cityLocation.insertAdjacentHTML("beforeend", insert);
+    textPlace.remove();
+  });
 
-      let insert = output.map(item => `<option value="${item}">${item}</option>`);
-      cityLocation.innerHTML = insert.join('');
-    });
+  //value for location
 
-    
+  newValue(cityLocation, function (newValueCity) {
+    selectedCity = newValueCity;
+    let globalArray = [...nationalData, ...internationalData];
+    let globalFilter = globalArray.filter((item) => item.city === newValueCity);
+    let insert = globalFilter
+      .map(
+        (item) =>
+          `<option value="${item.month} ${item.year}">${item.month} ${item.year}</option>`
+      )
+      .join("");
+    time.insertAdjacentHTML("beforeend", insert);
+  });
+
+  //value for time
+  newValue(time, function (newValueTime) {
+    selectedTime = newValueTime;
+    console.log(selectedPlace, selectedCity, selectedTime);
+  });
 }
-
 
 /*BLOCK4 CARDS*/
 
