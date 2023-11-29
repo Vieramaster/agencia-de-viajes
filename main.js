@@ -7,11 +7,13 @@ const navBox = document.querySelector(".box2");
 btnOpen.addEventListener("click", () => {
   btnOpen.style.display = "none";
   navBox.style.transform = "translatex(0rem)";
+  document.body.style.overflow = "hidden";
 });
 
 btnClose.addEventListener("click", () => {
   navBox.style.transform = "translatex(15rem)";
   btnOpen.style.display = "block";
+  document.body.style.overflow = "";
 });
 
 window.addEventListener("resize", () => {
@@ -142,7 +144,9 @@ function InjectDOMCards() {
         while (arrayNumbers.length < max) {
           let randomNumber = Math.floor(Math.random() * max);
           if (arrayNumbers.indexOf(randomNumber) === -1) {
-            arrayNumbers.push(randomNumber);/*si el numero no esta en el array (-1) lo agrega)*/
+            arrayNumbers.push(
+              randomNumber
+            ); /*si el numero no esta en el array (-1) lo agrega)*/
           }
         }
         return arrayNumbers;
@@ -196,6 +200,7 @@ function InjectDOMCards() {
       /*integration of card movement functions*/
       carrouselMoveNational();
       carroselMoveInternational();
+      searchBar(nationalData, internationalData);
     })
     .catch((error) => {
       console.error("Hubo un error al obtener los datos:", error);
@@ -203,6 +208,40 @@ function InjectDOMCards() {
 }
 
 window.addEventListener("DOMContentLoaded", InjectDOMCards);
+
+/*search bar*/
+
+
+const place = document.getElementById("place");
+const cityLocation = document.getElementById("location");
+const time = document.getElementById("time");
+
+function searchBar(nationalData, internationalData) {
+    function newValue(item, callback) {
+      item.addEventListener("change", (event) => {
+        let itemValue = event.target.value;
+        callback(itemValue)
+      });
+    }
+
+    newValue(place, function(newValuePlace) {
+      let output;
+      if (newValuePlace === "national") {
+        //search without repeating
+        let nationalValue = [...new Set(nationalData.map((item) => item.city))];
+        output = nationalValue;
+      } else if (newValuePlace === "international") {
+        let internationalValue = [...new Set(internationalData.map((item) => item.city))];
+        output = internationalValue;
+      }
+
+      let insert = output.map(item => `<option value="${item}">${item}</option>`);
+      cityLocation.innerHTML = insert.join('');
+    });
+
+    
+}
+
 
 /*BLOCK4 CARDS*/
 
@@ -256,3 +295,34 @@ pointsLi.forEach((point, i) => {
     mapTitle[i].style.top = "-10%";
   });
 });
+
+/*function searchBar(nationalData, internationalData){
+  
+  let valuePlace;
+
+  function itemValue(value){
+    value.addEventListener("change", (event) => {
+      valuePlace = event.target.value;
+      console.log(valuePlace);
+      itemLocation(valuePlace);
+    });
+  }
+
+  function itemLocation(newPlace){
+    let cities;
+    if(newPlace === "national"){
+      cities = nationalData.map(item => item.city);
+    } else if(newPlace === "international"){
+      cities = internationalData.map(item => item.city);
+    }
+
+    // Crear un string con las opciones del select
+    let options = cities.map(city => `<option value="${city}">${city}</option>`).join('');
+
+    // Agregar las opciones al select
+    Location.innerHTML = options;
+  }
+
+  itemValue(Place);
+}
+*/
