@@ -987,7 +987,9 @@ footer {
   }
   .block1 button i {
     font-size: 1.5rem;
+
   }
+
 
   /*BLOCK2*/
 
@@ -1091,7 +1093,9 @@ footer {
     text-align: center;
     align-items: center;
   }
-
+  .footer__box2 h2, .footer__box3 h2{
+    text-align: center;
+  }
   .footer__box1__logo, .footer__box2 li:last-child,.footer__box3 form{
     margin: auto; 
 
