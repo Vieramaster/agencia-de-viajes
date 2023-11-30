@@ -121,7 +121,7 @@ function carroselMoveInternational() {
 }
 
 /*api order*/
-async function dataJson() {
+function dataJson() {
   return fetch("/data.json")
     .then((response) => response.json())
     .catch(console.error);
@@ -211,7 +211,7 @@ window.addEventListener("DOMContentLoaded", InjectDOMCards);
 
 /*search bar*/
 
-const place = document.getElementById("place");
+const place = document.querySelector("place");
 const textPlace = document.querySelector("#place option:first-child");
 const cityLocation = document.getElementById("location");
 const time = document.getElementById("time");
